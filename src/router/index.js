@@ -41,12 +41,13 @@ router.beforeEach((to,from,next)=>{
      if(to.name==='topicIndex'){
          //独享路由
          if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            store.state.mobile_pc_aside_width = "80px"  //修改主页答题卡的左边部分的宽度
-            next({
+            store.state['user'].mobile_pc_aside_width = "80px"  //修改主页答题卡的左边部分的宽度
+            
+            next({   //跳转页面
                 name:'snswerSheetMobile',
                 params:{
                     StuNum:to.params.StuNum,
-                    snswerSheetId:1
+                    snswerSheetId:1,
                 }
             })
             return;
@@ -55,7 +56,7 @@ router.beforeEach((to,from,next)=>{
             name:'snswerSheetPc',
             params:{ 
                 StuNum:to.params.StuNum,
-                snswerSheetId:2
+                snswerSheetId:2,
             }
         })
         return;
