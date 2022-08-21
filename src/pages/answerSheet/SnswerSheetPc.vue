@@ -1,10 +1,10 @@
 <template>
-  
+   <span>pc</span>
 </template>
 
 <script>
 export default {
-    name:'SnswerSheetpC'
+    name:'SnswerSheetPc'
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  
+  <span>手机</span>
 </template>
 
 <script>

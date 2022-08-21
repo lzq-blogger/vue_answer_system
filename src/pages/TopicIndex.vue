@@ -2,7 +2,9 @@
   <el-container>
     <el-header>Header{{$route.params.id}}</el-header>
     <el-container>
-      <el-aside :width="`${mobile_pc_aside_width}`">Aside</el-aside>
+      <el-aside :width="`${mobile_pc_aside_width}`">
+        <router-view></router-view>
+      </el-aside>
       <el-container>
         <el-main>Main</el-main>
         <el-footer>Footer</el-footer>
