@@ -1,8 +1,17 @@
-import {createStore } from 'vuex'
-import user from './modules/user'
+import {defineStore} from 'pinia'
 
-export default createStore({
-  modules:{
-    user
+
+export const userMainStore = defineStore('main',{
+  state:()=>{
+    return{
+      mobile_pc_aside_width:'300px'
+    }
+  },
+  getters:{
+  },
+  actions:{
+    // EncodeURIComponent(encodeValue){
+    //   return window.btoa(encodeValue)
+    // }
   }
 })
