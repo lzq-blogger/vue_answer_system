@@ -10,8 +10,5 @@ export const userMainStore = defineStore('main',{
   getters:{
   },
   actions:{
-    // EncodeURIComponent(encodeValue){
-    //   return window.btoa(encodeValue)
-    // }
   }
 })

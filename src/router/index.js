@@ -28,7 +28,16 @@ const router = createRouter({
                     path:'snswerSheetPc/:snswerSheetId',
                     component:SnswerSheetPc,
                 }
-            ]
+            ],
+            //路由守卫
+            beforeEnter(to,from,next){
+                const store = userMainStore()
+                //独享路由
+                if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                    store.mobile_pc_aside_width = "80px"  //修改主页答题卡的左边部分的宽度
+                }
+                next()
+            }
         },
         {
             name:'stuLogin',
@@ -36,34 +45,6 @@ const router = createRouter({
             component:StuLogin,
         }
     ]
-})
-
-router.beforeEach((to,from,next)=>{
-    const store = userMainStore()
-     if(to.name==='topicIndex'){
-         //独享路由
-         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            store.mobile_pc_aside_width = "80px"  //修改主页答题卡的左边部分的宽度
-            
-            next({   //跳转页面
-                name:'snswerSheetMobile',
-                params:{
-                    StuNum:to.params.StuNum,
-                    snswerSheetId:1,
-                }
-            })
-            return;
-        }
-        next({
-            name:'snswerSheetPc',
-            params:{ 
-                StuNum:to.params.StuNum,
-                snswerSheetId:2,
-            }
-        })
-        return;
-     }
-     next()
 })
 
 export default router
