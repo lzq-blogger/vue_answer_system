@@ -26,8 +26,6 @@
     import {userMainStore} from '../store/index'
     import { useRoute } from 'vue-router'
     import ItemTopic from '../components/ItemTopic'
-    // import SnswerSheetMobile from './answerSheet/SnswerSheetMobile'
-    // import SnswerSheetPc from './answerSheet/SnswerSheetPc'
 
     export default {
       name: 'TopicIndex',
